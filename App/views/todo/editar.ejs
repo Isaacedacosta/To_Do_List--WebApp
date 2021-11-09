@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Editar tarefa</title>
+</head>
+
+<body>
+    <main class="container">
+        <h1>Editar tarefa</h1>
+        <form action="/tarefas/<%=editTodo._id%>" method="POST">
+            <label for="name" class="form-label">Tarefa</label>
+            <input type="text" name="Nome" id="name" placeholder="tarefa" value="<%=editTodo.Nome%>"
+                class="form-control">
+            <label for="prioridade" class="form-label">Prioridade</label>
+            <select name="Prioridade" id="prioridade" class="form-select">
+                <option value="alta" <%=editTodo.Prioridade==="alta" ? 'selected' : '' %>>alta</option>
+                <option value="media" <%=editTodo.Prioridade==="media" ? 'selected' : '' %>>media</option>
+                <option value="baixa" <%=editTodo.Prioridade==="baixa" ? 'selected' : '' %>>baixa</option>
+            </select>
+            <label for="obs" class="form-label">Notas</label>
+            <input type="text" name="Anotacao" id="obs" placeholder="obs" value="<%=editTodo.Anotacao%>"
+                class="form-control">
+            <div class="row mt-3">
+                <div class="col-1">
+                    <button class="btn btn-info">Confirmar</button>
+                </div>
+        </form>
+        <div class="col-1"><a href="/tarefas" class="btn btn-light">Cancelar</a></div>
+        <div class="col-1">
+            <form action="/tarefas/<%=editTodo._id%>/deletar" method="POST">
+                <button class="btn btn-danger">Delete!</button>
+            </form>
+        </div>
+        </div>
+
+
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

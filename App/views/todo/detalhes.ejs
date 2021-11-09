@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>
+        <%=showTodo.Nome%>
+    </title>
+</head>
+
+<body>
+    <main class="container">
+        <div class="card mt-5">
+            <div class="card-header">
+                <h1 class="text-center">
+                    <%=showTodo.Nome%>
+                </h1>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Prioridade: <%=showTodo.Prioridade%>
+                </li>
+                <li class="list-group-item">Obs.: <%=showTodo.Anotacao%>
+                </li>
+            </ul>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-1">
+                <a href="/tarefas" class="btn btn-light">Voltar</a>
+            </div>
+            <div class="col-1">
+                <a href="/tarefas/<%=showTodo._id%>/editar" class="btn btn-warning">Editar</a>
+            </div>
+        </div>
+
+
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
